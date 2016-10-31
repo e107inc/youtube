@@ -10,8 +10,8 @@
 +---------------------------------------------------------------+
 */
 
-define("LAN_PLUGIN_SUMMARY", "Embed YouTube channels and playlists into e107.");
-define("LAN_PLUGIN_DESCRIPTION", "Use YouTube RSS or API feeds to generate video pages for your e107 website.");
+define("LAN_PLUGIN_SUMMARY", "YouTube csatorna és lejátszási lista beágyazása e107 weboldalakra.");
+define("LAN_PLUGIN_DESCRIPTION", "Használja a YouTube RSS vagy API-hírcsatornákat videók generálásához az e107 honlapjára.");
 define("LAN_YOUTUBE_SUBSCRIBE_CHANNEL", "Feliratkozás a csatornára");
 define("LAN_YOUTUBE_NONE_AVAILABLE", "Nem elérhető!");
 define("LAN_YOUTUBE_BAD_LINK", "Hibás Link!");
