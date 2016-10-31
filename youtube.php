@@ -15,6 +15,8 @@ if (!defined('e107_INIT'))
 
 e107::css('youtube', 'youtube.css');
 
+e107::lan('youtube','youtube'); 
+e107::lan('youtube', 'admin', true); 
 
 class youtube_front
 {
@@ -268,7 +270,7 @@ class youtube_front
 
 		if(empty($data))
 		{
-			return "Bad Link";
+			return LAN_YOUTUBE_BAD_LINK;
 		}
 
 		$id = $data['id'];
@@ -318,7 +320,7 @@ class youtube_front
 
 		if(empty($list))
 		{
-			return "None available";
+			return LAN_YOUTUBE_NONE_AVAILABLE;
 		}
 
 		$tp = e107::getParser();
@@ -364,7 +366,7 @@ class youtube_front
 		{
 			$text .= '
 				<script src="https://apis.google.com/js/platform.js"></script>
-				<div class="youtube-subscribe"><small>Subscribe to this Channel</small>
+				<div class="youtube-subscribe"><small>'.LAN_YOUTUBE_SUBSCRIBE_CHANNEL.'</small>
 				<div class="g-ytsubscribe" data-channelid="'.$this->subscribeID.'" data-layout="default" data-theme="dark" data-count="default"></div>
 				</div>
 			';
