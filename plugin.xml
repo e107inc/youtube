@@ -9,6 +9,7 @@
 		<word>video</word>
 	</keywords>
 	<category>content</category>
+	<copyright></copyright>
 	<siteLinks>
 		<link url="{e_PLUGIN}youtube/youtube.php" sef='index' perm="everyone" >YouTube</link>
 	</siteLinks>
