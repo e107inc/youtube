@@ -9,8 +9,7 @@ if (!getperms('P'))
 	exit;
 }
 
-// e107::lan('youtube',true);
-
+e107::lan('youtube', 'admin', true);
 
 class youtube_adminArea extends e_admin_dispatcher
 {
@@ -22,8 +21,7 @@ class youtube_adminArea extends e_admin_dispatcher
 			'path' 			=> null,
 			'ui' 			=> 'youtube_form_ui',
 			'uipath' 		=> null
-		),
-		
+		),		
 
 	);	
 	
@@ -32,9 +30,7 @@ class youtube_adminArea extends e_admin_dispatcher
 
 		'main/list'			=> array('caption'=> LAN_MANAGE, 'perm' => 'P'),
 		'main/create'		=> array('caption'=> LAN_CREATE, 'perm' => 'P'),
-		'main/prefs'		=> array('caption'=> LAN_PREFS, 'perm' => 'P'),
-
-		// 'main/custom'		=> array('caption'=> 'Custom Page', 'perm' => 'P')
+		'main/prefs'		=> array('caption'=> LAN_PREFS, 'perm' => 'P'),		
 	);
 
 	protected $adminMenuAliases = array(
@@ -43,9 +39,6 @@ class youtube_adminArea extends e_admin_dispatcher
 	
 	protected $menuTitle = 'Youtube';
 }
-
-
-
 
 				
 class youtube_ui extends e_admin_ui
@@ -69,11 +62,11 @@ class youtube_ui extends e_admin_ui
 	
 		protected $fields 		= array (  'checkboxes' =>   array ( 'title' => '', 'type' => null, 'data' => null, 'width' => '5%', 'thclass' => 'center', 'forced' => '1', 'class' => 'center', 'toggle' => 'e-multiselect',  ),
 		  'youtube_id' =>   array ( 'title' => LAN_ID, 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'youtube_ref' =>   array ( 'title' => 'Ref', 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => 'Channel/Playlist Code or username', 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
+		  'youtube_ref' =>   array ( 'title' => LAN_REF, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => LAN_YOUTUBE_01, 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_title' =>   array ( 'title' => LAN_TITLE, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_type' =>   array ( 'title' => LAN_TYPE, 'type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 'batch' => true, 'filter' => true, 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_sef' =>   array ( 'title' => 'Sef', 'type' => 'text', 'data' => 'str', 'inline'=>true, 'width' => 'auto', 'help' => '', 'readParms' => '', 'writeParms' => array('size'=>'xxlarge', 'sef'=>'youtube_title'), 'class' => 'left', 'thclass' => 'left',  ),
-		  'youtube_subscribe' =>   array ( 'title' => 'Subscribe', 'type' => 'text', 'data' => 'str', 'inline'=>true, 'width' => 'auto', 'help' => 'Channel-ID for subscription', 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
+		  'youtube_subscribe' =>   array ( 'title' => LAN_SUBSCRIBE, 'type' => 'text', 'data' => 'str', 'inline'=>true, 'width' => 'auto', 'help' => LAN_YOUTUBE_02, 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
 
 
 		  	  	  'options' =>   array ( 'title' => LAN_OPTIONS, 'type' => null, 'data' => null, 'width' => '10%', 'thclass' => 'center last', 'class' => 'center last', 'forced' => '1',  ),
@@ -92,7 +85,7 @@ class youtube_ui extends e_admin_ui
 		public function init()
 		{
 			// Set drop-down values (if any). 
-			$this->fields['youtube_type']['writeParms']['optArray'] = array('user','channel', 'playlist'); // Example Drop-down array.
+		$this->fields['youtube_type']['writeParms']['optArray'] = array(LAN_USER, LAN_YOUTUBE_03, LAN_YOUTUBE_04); 
 	
 		}
 
@@ -130,23 +123,9 @@ class youtube_ui extends e_admin_ui
 		public function onUpdateError($new_data, $old_data, $id)
 		{
 			// do something		
-		}		
-		
-			
-	/*	
-		// optional - a custom page.  
-		public function customPage()
-		{
-			$text = 'Hello World!';
-			$otherField  = $this->getController()->getFieldVar('other_field_name');
-			return $text;
-			
-		}
-	*/
+		}	
 			
 }
-				
-
 
 class youtube_form_ui extends e_admin_form_ui
 {
