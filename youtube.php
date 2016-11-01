@@ -15,8 +15,7 @@ if (!defined('e107_INIT'))
 
 e107::css('youtube', 'youtube.css');
 
-e107::lan('youtube','youtube'); 
-e107::lan('youtube', 'admin', true); 
+e107::lan('youtube',false, true);
 
 class youtube_front
 {
@@ -54,7 +53,7 @@ class youtube_front
 		if(empty($_GET['cat']))
 		{
 			$text = $this->renderCategories();
-			$caption = "Videos";
+			$caption = LAN_YOUTUBE_VIDEOS;
 			e107::getRender()->tablerender($caption, $text);
 			return false;
 		}
