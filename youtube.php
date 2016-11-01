@@ -52,9 +52,8 @@ class youtube_front
 
 		if(empty($_GET['cat']))
 		{
-			$text = $this->renderCategories();
-			$caption = LAN_YOUTUBE_VIDEOS;
-			e107::getRender()->tablerender($caption, $text);
+			$this->text = $this->renderCategories();
+			$this->caption = LAN_YOUTUBE_004;
 			return false;
 		}
 
@@ -269,7 +268,7 @@ class youtube_front
 
 		if(empty($data))
 		{
-			return LAN_YOUTUBE_BAD_LINK;
+			return LAN_YOUTUBE_003;
 		}
 
 		$id = $data['id'];
@@ -319,7 +318,7 @@ class youtube_front
 
 		if(empty($list))
 		{
-			return LAN_YOUTUBE_NONE_AVAILABLE;
+			return LAN_YOUTUBE_002;
 		}
 
 		$tp = e107::getParser();
@@ -365,7 +364,7 @@ class youtube_front
 		{
 			$text .= '
 				<script src="https://apis.google.com/js/platform.js"></script>
-				<div class="youtube-subscribe"><small>'.LAN_YOUTUBE_SUBSCRIBE_CHANNEL.'</small>
+				<div class="youtube-subscribe"><small>'.LAN_YOUTUBE_001.'</small>
 				<div class="g-ytsubscribe" data-channelid="'.$this->subscribeID.'" data-layout="default" data-theme="dark" data-count="default"></div>
 				</div>
 			';

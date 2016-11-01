@@ -10,11 +10,13 @@
 +---------------------------------------------------------------+
 */
 
-define("LAN_SUBSCRIBE", "Subscribe");
-define("LAN_REF", "Ref");
-define("LAN_YOUTUBE_01", "Channel/Playlist Code or username");
-define("LAN_YOUTUBE_02", "Channel-ID for subscription");
-define("LAN_YOUTUBE_03", "Channel");
-define("LAN_YOUTUBE_04", "Playlist");
+
+
+define("LAN_YOUTUBE_ADMIN_01", "Channel/Playlist Code or username");
+define("LAN_YOUTUBE_ADMIN_02", "Channel-ID for subscription");
+define("LAN_YOUTUBE_ADMIN_03", "Channel");
+define("LAN_YOUTUBE_ADMIN_04", "Playlist");
+define("LAN_YOUTUBE_ADMIN_05", "Ref");
+define("LAN_YOUTUBE_ADMIN_06", "Subscribe");
 
 ?>

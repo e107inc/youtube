@@ -10,9 +10,9 @@
 +---------------------------------------------------------------+
 */
 
-define("LAN_YOUTUBE_SUBSCRIBE_CHANNEL", "Subscribe to this Channel");
-define("LAN_YOUTUBE_NONE_AVAILABLE", "None available!");
-define("LAN_YOUTUBE_BAD_LINK", "Bad Link!");
-define("LAN_YOUTUBE_VIDEOS", "Videos");
+define("LAN_YOUTUBE_001", "Subscribe to this Channel");
+define("LAN_YOUTUBE_002", "None available!");
+define("LAN_YOUTUBE_003", "Bad Link!");
+define("LAN_YOUTUBE_004", "Videos");
 
 ?>
