@@ -11,7 +11,7 @@
 */
 
 define("LAN_YOUTUBE_ADMIN_01", "Csatorna/Lejátszási lista kód vagy felhasználónév");
-define("LAN_YOUTUBE_ADMIN_02", "satorna azonosító a feliratkozáshoz");
+define("LAN_YOUTUBE_ADMIN_02", "Csatorna azonosító a feliratkozáshoz");
 define("LAN_YOUTUBE_ADMIN_03", "Csatorna");
 define("LAN_YOUTUBE_ADMIN_04", "Lejátszási lista");
 define("LAN_YOUTUBE_ADMIN_05", "Felhasználó");
