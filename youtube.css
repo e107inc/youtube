@@ -1,7 +1,7 @@
 
 
 .youtube .thumbnail img { margin-top: -9%; }
-.youtube .thumbnail { min-height:280px; overflow:hidden; }
+.youtube .thumbnail { min-height:285px; overflow:hidden; }
 .youtube .thumbnail h4 { padding:5px }
 .youtube-date {     position: absolute;     bottom: 25px;     right: 25px; }
 .youtube-description {   font-size: 0.8em;  text-align: left; line-height: 1.1em;  padding: 10px 0;  hyphens: auto; }
