@@ -77,7 +77,7 @@ class youtube_front
 
 		$tp = e107::getParser();
 
-		$caption = $tp->toHtml($data['youtube_title']);
+		$caption = $tp->toHtml($data['youtube_title']).'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:history.go(-1)"><< Back <<</a>';
 
 		$list = $this->getFeed($data['youtube_ref'], $data['youtube_type']);
 
@@ -132,7 +132,16 @@ class youtube_front
 		{
 			$link = e107::url('youtube', 'cat', $val);
 
-			$text .= "<li><a href='".$link."'>".$val['youtube_title']."</a></li>";
+			$text .= "<li><a href='".$link."'>".$val['youtube_title']."</a>";
+			
+			if(!empty($val['youtube_description']))
+			{
+				$text .= "<br>".$val['youtube_description']."</br></li>";
+			}
+			else
+			{
+				$text .= "</li>";	
+			}
 		}
 
 		$text .= "</ul>";
