@@ -61,17 +61,17 @@ class youtube_ui extends e_admin_ui
 		protected $listOrder		= 'youtube_id DESC';
 	
 		protected $fields 		= array (  'checkboxes' =>   array ( 'title' => '', 'type' => null, 'data' => null, 'width' => '5%', 'thclass' => 'center', 'forced' => '1', 'class' => 'center', 'toggle' => 'e-multiselect',  ),
-		  'youtube_id' =>   array ( 'title' => LAN_ID, 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'youtube_id' =>   array ( 'title' => LAN_ID, 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => array('url'=>'item', 'target'=>'blank'), 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_ref' =>   array ( 'title' => LAN_YOUTUBE_ADMIN_05, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => LAN_YOUTUBE_ADMIN_01, 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_title' =>   array ( 'title' => LAN_TITLE, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
-		  'youtube_type' =>   array ( 'title' => LAN_TYPE, 'type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 'batch' => true, 'filter' => true, 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
+		  'youtube_type' =>   array ( 'title' => LAN_TYPE, 'type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 'batch' => true, 'filter' => true, 'inline' => true, 'help' => '', 'readParms' => array(), 'writeParms' => array(), 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_sef' =>   array ( 'title' => LAN_SEFURL, 'type' => 'text', 'data' => 'str', 'inline'=>true, 'width' => 'auto', 'help' => '', 'readParms' => '', 'writeParms' => array('size'=>'xxlarge', 'sef'=>'youtube_title'), 'class' => 'left', 'thclass' => 'left',  ),
 		  'youtube_subscribe' =>   array ( 'title' => LAN_YOUTUBE_ADMIN_06, 'type' => 'text', 'data' => 'str', 'inline'=>true, 'width' => 'auto', 'help' => LAN_YOUTUBE_ADMIN_02, 'readParms' => '', 'writeParms' => array('size'=>'xxlarge'), 'class' => 'left', 'thclass' => 'left',  ),
 
 		  'options' =>   array ( 'title' => LAN_OPTIONS, 'type' => null, 'data' => null, 'width' => '10%', 'thclass' => 'center last', 'class' => 'center last', 'forced' => '1',  ),
 		);		
 		
-		protected $fieldpref = array('youtube_title', 'youtube_ref', 'youtube_type', 'youtube_sef');
+		protected $fieldpref = array('youtube_id', 'youtube_title', 'youtube_ref', 'youtube_type', 'youtube_sef');
 		
 
 	//	protected $preftabs        = array('General', 'Other' );
