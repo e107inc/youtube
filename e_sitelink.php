@@ -52,7 +52,7 @@ class youtube_sitelink // include plugin-folder in the name.
 		while($row = $sql->fetch())
 		{
 			$sublinks[] = array(
-				'link_name'			=> $tp->toHtml($row['youtube_title'],'','TITLE'),
+				'link_name'			=> $tp->toHTML($row['youtube_title'],'','TITLE'),
 				'link_url'			=> e107::url('youtube', 'cat', $row),
 				'link_description'	=> '',
 				'link_button'		=> $row['blank_icon'],
