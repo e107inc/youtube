@@ -94,6 +94,19 @@ class youtube_ui extends e_admin_ui
 		
 		public function beforeCreate($new_data,$old_data)
 		{
+			if(!empty($new_data['youtube_title']))
+			{
+				$new_data['youtube_title'] = trim(e107::getParser()->toText($new_data['youtube_title']));
+			}
+			
+			if(empty($new_data['youtube_sef']))
+			{
+				$new_data['youtube_sef'] = eHelper::title2sef($new_data['youtube_title']);
+			}
+			else
+			{
+				$new_data['youtube_sef'] = eHelper::title2sef($new_data['youtube_sef']);
+			}
 			return $new_data;
 		}
 	
@@ -112,6 +125,19 @@ class youtube_ui extends e_admin_ui
 		
 		public function beforeUpdate($new_data, $old_data, $id)
 		{
+			if(!empty($new_data['youtube_title']))
+			{
+				$new_data['youtube_title'] = trim(e107::getParser()->toText($new_data['youtube_title']));
+			}
+			
+			if(isset($new_data['youtube_sef']) && empty($new_data['youtube_sef']) && !empty($new_data['youtube_title']))
+			{
+				$new_data['youtube_sef'] = eHelper::title2sef($new_data['youtube_title']);
+			}
+			elseif(!empty($new_data['youtube_sef']))
+			{
+				$new_data['youtube_sef'] = eHelper::title2sef($new_data['youtube_sef']);
+			}
 			return $new_data;
 		}
 
