@@ -15,4 +15,3 @@ define("LAN_YOUTUBE_002", "None available!");
 define("LAN_YOUTUBE_003", "Bad Link!");
 define("LAN_YOUTUBE_004", "Videos");
 
-?>

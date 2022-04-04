@@ -15,4 +15,3 @@ define("LAN_YOUTUBE_002", "Nem elérhető!");
 define("LAN_YOUTUBE_003", "Hibás Link!");
 define("LAN_YOUTUBE_004", "Videók");
 
-?>

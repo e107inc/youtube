@@ -17,4 +17,4 @@ define("LAN_YOUTUBE_ADMIN_04", "Lejátszási lista");
 define("LAN_YOUTUBE_ADMIN_05", "Felhasználó");
 define("LAN_YOUTUBE_ADMIN_06", "Feliratkozás");
 
-?>
+

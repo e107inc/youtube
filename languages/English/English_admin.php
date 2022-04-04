@@ -19,4 +19,3 @@ define("LAN_YOUTUBE_ADMIN_04", "Playlist");
 define("LAN_YOUTUBE_ADMIN_05", "Ref");
 define("LAN_YOUTUBE_ADMIN_06", "Subscribe");
 
-?>
