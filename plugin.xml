@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Plugin name="Youtube" lan="" version="1.0" date="2022-04-04" compatibility="2.3.2" installRequired="true" >
+<e107Plugin name="Youtube" lan="" version="1.1" date="2022-04-04" compatibility="2.3.2" installRequired="true" >
 	<author name="e107.org" url="https://github.com/e107inc/youtube" />
 	<summary lan="LAN_PLUGIN_SUMMARY">Embed YouTube channels and playlists into e107 automatically.</summary>
 	<description lan="LAN_PLUGIN_DESCRIPTION">Use YouTube RSS or API feeds to generate video pages for your e107 website.</description>
