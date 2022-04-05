@@ -2,8 +2,8 @@
 
 .youtube .thumbnail img { margin-top: -9%; }
 .youtube .thumbnail { min-height:285px; overflow:hidden; }
-.youtube .thumbnail h4 { padding:5px }
-.youtube-date {     position: absolute;     bottom: 25px;     right: 25px; }
-.youtube-description {   font-size: 0.8em;  text-align: left; line-height: 1.1em;  padding: 10px 0;  hyphens: auto; }
+.youtube .thumbnail h5 { padding:5px; font-size:18px;  }
+.youtube .thumbnail .youtube-date {  position: absolute;     bottom: 25px;     right: 25px; }
+.youtube-description {   font-size: 0.8em;  text-align: left; line-height: 1.2em;  padding: 10px 0;  hyphens: auto; }
 .youtube-subscribe { margin-top:30px; text-align:center;}
 .youtube-subscribe small { display:block; padding:10px}

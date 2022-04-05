@@ -38,6 +38,7 @@ class youtube_front
 	private $apiKey = false;
 	private $maxResults = 50;
 	private $subscribeID = false;
+	private $bootstrap;
 
 	function __construct()
 	{
@@ -48,6 +49,8 @@ class youtube_front
 		*/
 
 		$visibilityClass = e107::pref('youtube', 'visibility',e_UC_PUBLIC);
+
+		$this->bootstrap = e107::getTheme()->getLibVersion('bootstrap');
 
 		if(!check_class($visibilityClass))
 		{
@@ -61,6 +64,13 @@ class youtube_front
 		{
 			$this->text = $this->renderCategories();
 			$this->caption = LAN_YOUTUBE_004;
+
+			$breadcrumb = array(
+				0 => ['text'=>$this->caption, 'url'=> e107::url('youtube', 'index')],
+			);
+
+			e107::breadcrumb($breadcrumb);
+
 			return false;
 		}
 
@@ -76,8 +86,8 @@ class youtube_front
 		$data = $this->lookup();
 
 		$tp = e107::getParser();
-
-		$caption = $tp->toHtml($data['youtube_title']).'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:history.go(-1)"><< Back <<</a>';
+		$title = $tp->toHtml($data['youtube_title']);
+		$caption = $title.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:history.go(-1)"><< Back <<</a>';
 
 		$list = $this->getFeed($data['youtube_ref'], $data['youtube_type']);
 
@@ -89,13 +99,18 @@ class youtube_front
 
 		$text = '';
 
+		$breadcrumb = array(
+			0 => ['text'=>LAN_YOUTUBE_004, 'url'=> e107::url('youtube', 'index')],
+			1 => ['text'=>$title, 'url'=> null],
+		);
+
 		if(!empty($_GET['id']))
 		{
 			$this->curVideo = $_GET['id'];
 			$text .= $this->renderVideo();
 			$text .= "<hr />";
+			$breadcrumb[1]['url'] = e107::url('youtube','cat',$data);
 		}
-
 
 
 		$text .= $this->renderList( $list);
@@ -103,6 +118,11 @@ class youtube_front
 
 		$this->caption = $caption;
 		$this->text = $text;
+
+
+
+
+		e107::breadcrumb($breadcrumb);
 
 	}
 
@@ -318,7 +338,7 @@ class youtube_front
 		{
 			$social = e107::getScBatch('social');
 			$parms = array('url' => $this->getUrl($data,'full'), 'type'=>'basic', 'title'=>$data['title']);
-			$text .= "<div class='text-right'><small>". $social->sc_socialshare($parms)."</small></div>";
+			$text .= "<div class='text-right text-end'><small>". $social->sc_socialshare($parms)."</small></div>";
 		}
 
 		return $text;
@@ -341,7 +361,7 @@ class youtube_front
 
 
 
-		$text = "<div class='youtube row'>";
+		$text = "<div class='youtube row row-cols-1 row-cols-md-3 g-4'>";
 
 		foreach($this->videoData as $id=>$item)
 		{
@@ -352,23 +372,39 @@ class youtube_front
 
 			$linkStart = "<a href='".$link."'>";
 			$linkEnd    = "</a>";
-			$class = 'thumbnail' ;
+			$class = '' ;
 
 			if($active === true)
 			{
 				$linkStart = '';
 				$linkEnd = '';
-				$class = "thumbnail active";
+				$class = " active border-primary";
 			}
 
 
 
-			$text .= "<div class='col-xs-12 col-sm-4'>
-			<div class='".$class."'>".$linkStart.$this->renderThumbnail($item).$linkEnd."
-			<h4>".$linkStart.$item['title'].$linkEnd."</h4>
-			<div class='text-right text-muted youtube-date'><small>".$tp->toDate($item['date'], 'relative')."</small></div>
+			/*$text .= "<div class='col col-xs-12 col-sm-4'>
+			<div class='".$class."'>
+				<div class='card-text'>".$linkStart.$this->renderThumbnail($item).$linkEnd."
+					<h4>".$linkStart.$item['title'].$linkEnd."</h4>
+					<div class='text-right text-end card-footer text-muted youtube-date'><small>".$tp->toDate($item['date'], 'relative')."</small></div>
+				</div>
 			</div>
-			</div>"; // $item['title']."<br/>";
+			</div>"; // $item['title']."<br/>";*/
+
+			$bs = ($this->bootstrap === 3) ? 'thumbnail ' : '';
+
+			$text .= '<div class="col col-xs-12 col-sm-4">
+			    <div class="'.$bs.'card h-100'.$class.'">
+			      '.$linkStart.$this->renderThumbnail($item).$linkEnd.'
+			      <div class="card-body">
+			        <h5 class="card-title">'.$linkStart.$item['title'].$linkEnd.'</h5>
+			      </div>
+			      <div class="youtube-date card-footer text-right text-end ">
+			        <small class="text-muted">'.$tp->toDate($item['date'], 'relative').'</small>
+			      </div>
+			    </div>
+			  </div>';
 
 		}
 
@@ -412,7 +448,7 @@ class youtube_front
 		$src = $item['thumbnail'];
 		$src2 = $item['thumbnailHD'];
 
-		return "<div class='embed-responsive embed-responsive-16by9'><img class='img-responsive' src='".$src."' srcset='".$src2." 640w' alt='' /></div>";
+		return "<div class='embed-responsive embed-responsive-16by9 ratio ratio-16x9'><img class='img-responsive img-fluid card-img-top' src='".$src."' srcset='".$src2." 640w' alt='' /></div>";
 
 	}
 

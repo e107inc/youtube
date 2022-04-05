@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<e107Export version="2.3.2 (git)" timestamp="1649119227" >
+	<database>
+	<dbTable name="youtube">
+		<item>
+			<field name="youtube_id">1</field>
+			<field name="youtube_ref">marvel</field>
+			<field name="youtube_title">Marvel User</field>
+			<field name="youtube_description"><![CDATA[Videos of the YouTube user &#039;marvel&#039;]]></field>
+			<field name="youtube_type">0</field>
+			<field name="youtube_sef">marvel</field>
+			<field name="youtube_subscribe"></field>
+		</item>
+		<item>
+			<field name="youtube_id">2</field>
+			<field name="youtube_ref">UCxwitsUVNzwS5XBSC5UQV8Q</field>
+			<field name="youtube_title">Marvel Channel</field>
+			<field name="youtube_description">Youtube videos of a Marvel channel.</field>
+			<field name="youtube_type">1</field>
+			<field name="youtube_sef">marvel-hq</field>
+			<field name="youtube_subscribe">UCxwitsUVNzwS5XBSC5UQV8Q</field>
+		</item>
+		<item>
+			<field name="youtube_id">3</field>
+			<field name="youtube_ref">PLK5HARgNfgj-AFqP-9VVYdm1ksy69HA__</field>
+			<field name="youtube_title">Marvel Playlist</field>
+			<field name="youtube_description">Videos of a Youtube playlist</field>
+			<field name="youtube_type">2</field>
+			<field name="youtube_sef">marvel-vids</field>
+			<field name="youtube_subscribe">UCxwitsUVNzwS5XBSC5UQV8Q</field>
+		</item>
+	</dbTable>
+	</database>
+</e107Export>

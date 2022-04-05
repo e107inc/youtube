@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Plugin name="Youtube" lan="" version="1.0" date="2016-10-28" compatibility="2.0" installRequired="true" >
-	<author name="CaMer0n" url="https://github.com/e107inc/youtube" />
-	<summary lan="LAN_PLUGIN_SUMMARY">Embed YouTube channels and playlists into e107.</summary>
+<e107Plugin name="Youtube" lan="" version="1.0" date="2022-04-04" compatibility="2.3.2" installRequired="true" >
+	<author name="e107.org" url="https://github.com/e107inc/youtube" />
+	<summary lan="LAN_PLUGIN_SUMMARY">Embed YouTube channels and playlists into e107 automatically.</summary>
 	<description lan="LAN_PLUGIN_DESCRIPTION">Use YouTube RSS or API feeds to generate video pages for your e107 website.</description>
 	<keywords>
 		<word>multimedia</word>
@@ -9,6 +9,9 @@
 		<word>video</word>
 	</keywords>
 	<category>content</category>
+    <screenshots>
+		<image>preview.jpg</image>
+	</screenshots>
 	<copyright></copyright>
 	<siteLinks>
 		<link url="{e_PLUGIN}youtube/youtube.php" sef='index' perm="everyone" >YouTube</link>

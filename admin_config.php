@@ -51,6 +51,7 @@ class youtube_ui extends e_admin_ui
 		protected $pid				= 'youtube_id';
 		protected $perPage			= 10; 
 		protected $batchDelete		= true;
+		protected $batchExport      = true;
 	//	protected $batchCopy		= true;		
 	//	protected $sortField		= 'somefield_order';
 	//	protected $orderStep		= 10;
